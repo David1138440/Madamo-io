@@ -1,25 +1,3 @@
-import cv2
-import os
-import imutils
-
-#emotionName = 'Enojo'
-#emotionName = 'Felicidad'
-#emotionName = 'Sorpresa'
-emotionName = 'Tristeza'
-
-dataPath = '.../Reconocimiento Emociones/Data' #Cambia a la ruta donde hayas almacenado Data
-emotionsPath = dataPath + '/' + emotionName
-
-if not os.path.exists(emotionsPath):
-    print('Carpeta creada: ',emotionsPath)
-    os.makedirs(emotionsPath)
-
-cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
-
-faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
-count = 0
-
-while True:
 
     ret, frame = cap.read()
     if ret == False: break
